@@ -1,0 +1,21 @@
+boss:
+  outputs:
+    dev:
+      type: duckdb
+      path: endboss.duckdb
+      extensions:
+        - spatial
+        - parquet
+      threads: 1
+      settings:
+        memory_limit: "35GB"
+        threads: 1
+
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      threads: 1
+      settings:
+        memory_limit: "35GB"
+        threads: 1
+  target: dev

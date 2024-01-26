@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_datagov__pois
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "Id of the poi"
+        tests:
+          - unique
+          - not_null
+      - name: comment
+        description: "Very short desdcription of the poi"
+      - name: short_description
+        description: "Short desdcription of the poi"
+      - name: long_description
+        description: "Long desdcription of the poi"
+      - name: location_name
+        description: "Name of the poi"
+      - name: location_postal_code
+        description: "Postal code of the poi"
+      - name: location_street
+        description: "Street of the poi"
+      - name: rating
+        description: "Rating of the poi"
+      - name: features
+        description: "Features of the poi"
+      - name: location_longitude
+        description: "Longitude of the poi"
+      - name: location_latitude
+        description: "Latitude of the poi"
+      - name: label_fr
+        description: "Label in french"
+      - name: label_en
+        description: "Label in english"
+      - name: location_department
+        description: "Department of the poi"
+  - name: stg_osm__points
+    description: "list of nodes from osmnx"
+    columns:
+      - name: osmid
+        description: "Id of the node"
+        tests:
+          - unique
+          - not_null
+      - name: node
+        description: "Geometry type in EPSG:4326 projection for the location of the node"
+        tests:
+          - not_null
+          - unique
