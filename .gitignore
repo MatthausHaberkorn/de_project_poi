@@ -6,4 +6,4 @@ seeds/
 seeds1/
 output*
 .vscode/
-endboss.duckdb
+endboss.duckdb*

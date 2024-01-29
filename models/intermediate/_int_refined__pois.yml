@@ -1,0 +1,40 @@
+version: 2
+models:
+  - name: int_refined__pois
+    columns:
+      - name: poi_id
+        description: "Identifies the poi"
+        data_type: VARCHAR
+      - name: poi_description
+        description: "Long description of the point of interest else short description else comment"
+        data_type: VARCHAR
+      - name: poi_label
+        description: "Name of the point of interest in english when existing, else in french"
+        data_type: VARCHAR
+      - name: poi_location_department
+        description: "Location department of the POI"
+        data_type: VARCHAR
+      - name: poi_location_name
+        description: "Name of the location of the POI"
+        data_type: VARCHAR
+      - name: poi_location_postal_code
+        description: "Location postal code of the POI"
+        data_type: INTEGER
+      - name: poi_location_street
+        description: "Location street name of the POI"
+        data_type: VARCHAR
+      - name: poi_location_longitude
+        description: "Location longitude of the POI in decimal degrees"
+        data_type: DOUBLE
+      - name: poi_location_latitude
+        description: "Location latitude of the POI in decimal degrees"
+        data_type: DOUBLE
+      - name: poi_rating
+        description: "Rating of the POI on a 0-5 star scale"
+        data_type: VARCHAR
+      - name: poi_features
+        description: "Usage category of the POI"
+        data_type: VARCHAR
+      - name: poi_point
+        description: '{{ doc("poi_point") }}'
+        data_type: GEOMETRY

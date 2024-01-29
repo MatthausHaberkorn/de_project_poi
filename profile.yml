@@ -1,4 +1,5 @@
 boss:
+  +dbt-osmosis: "_{model}.yml"
   outputs:
     dev:
       type: duckdb

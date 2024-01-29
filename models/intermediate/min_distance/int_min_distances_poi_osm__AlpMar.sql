@@ -3,6 +3,6 @@
 
 {{ config(materialized='table') }}
 
-{{ min_dist('Alpes-Maritimes') }}
+{{ min_dist('Alpes- Maritimes') }}
 
 

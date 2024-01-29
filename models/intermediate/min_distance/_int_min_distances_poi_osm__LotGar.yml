@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: int_min_distances_poi_osm__LotGar
+    columns:
+      - name: osm_id
+        description: "Identifies a osm junction"
+        data_type: BIGINT
+      - name: poi_id
+        description: "Identifies the poi"
+        data_type: VARCHAR
+      - name: min_distance
+        description: "Distance calculated between the poi and the osm junction"
+        data_type: DOUBLE
+      - name: rank
+        description: "Helper column to rank the distances"
+        data_type: BIGINT

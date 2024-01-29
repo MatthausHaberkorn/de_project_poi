@@ -4,15 +4,15 @@
     'Dordogne',
     'Vienne',
     'Aveyron',
-    "Côte-d'Or",
-    'Alpes-Maritimes',
+    "CotOr",
+    'AlpMar',
     'Savoie',
-    'Lot-et-Garonne',
+    'LotGar',
     'Lot',
-    'Tarn-et-Garonne',
-    'Hautes-Pyrénées',
-    'Ille-et-Vilaine',
-    'Isère'
+    'TarnGar',
+    'HautPyr',
+    'IlleVil',
+    'Isere'
     ] %}
 
 {% set union_sql = [] %}
@@ -25,9 +25,9 @@ with unioned as (
     {{ union_sql|join(' union all ') }}
 ),
 joined as (
-    select poi.* exclude (node), unioned.osmid, unioned.min_distance
+    select poi.* exclude (poi_point), unioned.osm_id, unioned.min_distance
     from {{ref('int_refined__pois')}} as poi
-    join unioned on poi.id = unioned.poi_id
+    join unioned on poi.poi_id = unioned.poi_id
 )
 select * from joined
 

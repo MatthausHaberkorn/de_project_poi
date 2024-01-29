@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: stg_osm__points
+    description: "list of junctions from osm street network"
+    columns:
+      - name: osm_id
+        description: '{{ doc("osm_id") }}'
+        tests:
+          - unique
+          - not_null
+        data_type: BIGINT
+      - name: osm_point
+        description: '{{ doc("osm_point") }}'
+        data_type: GEOMETRY
+      - name: osm_department
+        description: "French department name. We use it to slice the data set in peaces for later calculations"
+        data_type: VARCHAR
+        tests:
+          - not_null

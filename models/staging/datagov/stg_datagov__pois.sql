@@ -43,24 +43,24 @@ with
 
     )
 select
-    id,
-    comment,
-    label_list[1] as label_en,
-    label_list[2] as label_fr,
-    description_list[1] as short_description,
-    description_list[2] as long_description,
-    location_list[1] as location_name,
-    location_list[2] as location_postal_code,
-    location_list[3] as location_street,
-    location_list[5] as location_latitude,
-    location_list[6] as location_longitude,
-    location_list[4] as location_department,
-    rating,
+    id as poi_id,
+    comment as poi_comment,
+    label_list[1] as poi_label_en,
+    label_list[2] as poi_label_fr,
+    description_list[1] as poi_short_description,
+    description_list[2] as poi_long_description,
+    location_list[1] as poi_location_name,
+    location_list[2] as poi_location_postal_code,
+    location_list[3] as poi_location_street,
+    location_list[5] as poi_location_latitude,
+    location_list[6] as poi_location_longitude,
+    location_list[4] as poi_location_department,
+    rating as poi_rating,
     concat_ws(
         ', ',
         trim(feature_list[1], ' ,'),
         trim(feature_list[2], ' ,'),
         trim(feature_list[3], ' ,'),
         trim(feature_list[4], ' ,')
-    ) as features,
+    ) as poi_features,
 from extracted
