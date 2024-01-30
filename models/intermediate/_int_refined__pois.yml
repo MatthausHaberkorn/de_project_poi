@@ -38,3 +38,6 @@ models:
       - name: poi_point
         description: '{{ doc("poi_point") }}'
         data_type: GEOMETRY
+      - name: poi_features
+        description: "Usage category of the POI"
+        data_type: VARCHAR

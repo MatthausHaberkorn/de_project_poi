@@ -2,7 +2,10 @@
     {% set escaped_department = department | replace("'", "''") %}
     with
         distance as (
-            select osm.osm_id, poi.poi_id, st_distance(poi.poi_point, osm.osm_point) as distance
+            select
+                osm.osm_id,
+                poi.poi_id,
+                st_distance(poi.poi_point, osm.osm_point) as distance
             from {{ ref('int_refined__pois') }} as poi
             join
                 {{ ref('stg_osm__points') }} as osm

@@ -24,11 +24,13 @@ with
                 '$[0].features[1]."rdfs:label".en[0]',
                 '$[0].features[2]."rdfs:label".en[0]',
                 '$[0].features[3]."rdfs:label".en[0]'
-            ] as feature_list
+            ] as feature_list,
+            "@type" as type_list,
         from
             read_json(
                 'seeds1/*.json',
                 columns = {
+                    '@type':'VARCHAR[]',
                     'dc:identifier':'VARCHAR',
                     'rdfs:comment':'STRUCT(en VARCHAR[])',
                     'rdfs:label':'STRUCT(en VARCHAR[], fr VARCHAR[])',
@@ -44,6 +46,7 @@ with
     )
 select
     id as poi_id,
+    array_to_string(type_list, ', ') as poi_types,
     comment as poi_comment,
     label_list[1] as poi_label_en,
     label_list[2] as poi_label_fr,
