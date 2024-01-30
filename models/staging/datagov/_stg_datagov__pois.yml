@@ -6,6 +6,8 @@ models:
       - name: poi_id
         description: '{{ doc("poi_id") }}'
         data_type: VARCHAR
+        tests:
+          - not_null
       - name: poi_types
         description: "Stringlist with point of intertest categories"
         data_type: VARCHAR
@@ -42,6 +44,8 @@ models:
       - name: poi_location_department
         description: "Location department of the POI"
         data_type: VARCHAR
+        tests:
+          - not_null
       - name: poi_rating
         description: "Rating of the POI on a 0-5 star scale"
         data_type: VARCHAR
